@@ -9,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - bsa-lab',
+    titleTemplate: '%s',
     title: 'bsa-lab',
     meta: [
       { charset: 'utf-8' },
