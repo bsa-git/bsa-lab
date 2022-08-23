@@ -1,15 +1,15 @@
 import colors from 'vuetify/es5/util/colors'
 
-const pkg = require('./package');
-const config = require('config');
+import config from 'config'
+import pkg from './package'
 
-const debug = require('debug')('app:nuxt.config');
-const isDebug = false;
+const debug = require('debug')('app:nuxt.config')
+const isDebug = false
 
-if(isDebug && process.env) debug('process.env:', process.env);
-if(isDebug && config) debug('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
-if(config.has('personal_data')){
-  if(isDebug && config) debug('personal_data: ' + config.get('personal_data.contact.fullName'));
+if (isDebug && process.env) { debug('process.env:', process.env) }
+if (isDebug && config) { debug('NODE_ENV: ' + config.util.getEnv('NODE_ENV')) }
+if (config.has('personal_data')) {
+  if (isDebug && config) { debug('personal_data: ' + config.get('personal_data.contact.fullName')) }
 }
 
 export default {
@@ -35,7 +35,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto: 100,300,400,500,700,900' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
     ]
   },
 
