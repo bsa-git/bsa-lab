@@ -1,0 +1,46 @@
+{
+  "api": {
+    "url": "API_PROD_URL"
+  },
+  "personal_data": {
+    "app_title": "BSA",
+    "logo_title": "BSA Lab.",
+    "logo_icon": "check_circle",
+    "logo_img": "/img/doc/contacts/my-img-logo.jpg",
+    "my_img": "/img/doc/contacts/my-img.jpg",
+    "copyright": "© 2017 Сергей Бескоровайный",
+    "designed_with": "BSA Lab.",
+    "designed_with_url": "http://bsa-git.github.io/",
+    "contact": {
+      "fullName": "Бескоровайный Сергей Анатольевич",
+      "givenName": "Сергей",
+      "familyName": "Бескоровайный",
+      "myImg": "/img/doc/contacts/my-img-contact.jpg",
+      "address": "Черкассы, Украина, 18029",
+      "phonePersonal": "+380 98 002 9369",
+      "phoneWork": "",
+      "emailPersonal": "bs261257@gmail.com",
+      "emailWork": "bs2657@yandex.ru",
+      "website": "http://bsa-git.github.io/"
+    },
+    "socials": {
+      "facebook": {
+        "url": "https://www.facebook.com/profile.php?id=100010324420196",
+        "icon": "fa-facebook"
+      },
+      "twitter": {
+        "url": "https://twitter.com/bsa2657",
+        "tag": "@bsa2657",
+        "icon": "fa-twitter"
+      },
+      "google": {
+        "url": "https://plus.google.com/110341449488589699610?rel=author",
+        "icon": "fa-google-plus"
+      },
+      "skype": {
+        "url": "bsa_home",
+        "icon": "fa-skype"
+      }
+    }
+  }
+}

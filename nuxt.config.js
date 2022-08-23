@@ -1,10 +1,16 @@
 import colors from 'vuetify/es5/util/colors'
 
 const pkg = require('./package');
+const config = require('config');
+
 const debug = require('debug')('app:nuxt.config');
 const isDebug = false;
 
-if(true && process.env) debug('process.env:', process.env.NODE_ENV);
+if(isDebug && process.env) debug('process.env:', process.env);
+if(isDebug && config) debug('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
+if(config.has('personal_data')){
+  if(isDebug && config) debug('personal_data: ' + config.get('personal_data.contact.fullName'));
+}
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode

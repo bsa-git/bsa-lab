@@ -1,0 +1,47 @@
+{
+  "host": "HOST",
+  "port": "PORT",
+  "base_url": "BASE_URL",
+  "maintenance": "MAINTENANCE",
+  "personal_data": {
+    "app_title": "My Application",
+    "logo_title": "My Logo",
+    "logo_icon": "new_releases",
+    "logo_img": "/img/system/user_female.png",
+    "my_img": "/img/system/user_female.png",
+    "copyright": "© 2016 Sample - All Rights Reserved",
+    "designed_with": "Sample Studio",
+    "designed_with_url": "https://www.sample.com/iamgurdeeposahan",
+    "contact": {
+      "fullName": "Molly King",
+      "givenName": "Molly",
+      "familyName": "King",
+      "myImg": "/img/system/user_female.png",
+      "address": "795 Sample Ave, Suite 600",
+      "phonePersonal": "+01 234 567 890",
+      "phoneWork": "+01 234 567 890",
+      "emailPersonal": "personal@sample.com",
+      "emailWork": "work@sample.com",
+      "website": "www.sample.com"
+    },
+    "socials": {
+      "facebook": {
+        "url": "#",
+        "icon": "fa-facebook"
+      },
+      "twitter": {
+        "url": "#",
+        "tag": "@Sample",
+        "icon": "fa-twitter"
+      },
+      "google": {
+        "url": "#",
+        "icon": "fa-google-plus"
+      },
+      "skype": {
+        "url": "#",
+        "icon": "fa-skype"
+      }
+    }
+  }
+}
