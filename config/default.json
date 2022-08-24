@@ -1,17 +1,17 @@
 {
   "host": "HOST",
   "port": "PORT",
-  "base_url": "BASE_URL",
+  "baseUrl": "BASE_URL",
   "maintenance": "MAINTENANCE",
-  "personal_data": {
-    "app_title": "My Application",
-    "logo_title": "My Logo",
-    "logo_icon": "new_releases",
-    "logo_img": "/img/system/user_female.png",
-    "my_img": "/img/system/user_female.png",
+  "personalData": {
+    "appTitle": "My Application",
+    "logoTitle": "My Logo",
+    "logoIcon": "new_releases",
+    "logoImg": "/img/system/user_female.png",
+    "myImg": "/img/system/user_female.png",
     "copyright": "© 2016 Sample - All Rights Reserved",
-    "designed_with": "Sample Studio",
-    "designed_with_url": "https://www.sample.com/iamgurdeeposahan",
+    "designedWith": "Sample Studio",
+    "designedWithUrl": "https://www.sample.com/iamgurdeeposahan",
     "contact": {
       "fullName": "Molly King",
       "givenName": "Molly",

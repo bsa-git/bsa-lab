@@ -237,37 +237,6 @@ const removeAccessToken = function () {
 }
 
 /**
- * verifyJWT
- * Pass a jwt token, get back a payload if it's valid.
- *
- * @param token
- * @return {Promise.<void>}
- */
-const verifyJWT = function (token) {
-  const decode = require('jwt-decode')
-  // -----------------------------------
-  const payloadIsValid = function payloadIsValid (payload) {
-    return payload && (!payload.exp || payload.exp * 1000 > new Date().getTime())
-  }
-
-  if (typeof token !== 'string') {
-    return Promise.reject(new Error('Token provided to verifyJWT is missing or not a string'))
-  }
-
-  try {
-    const payload = decode(token)
-
-    if (payloadIsValid(payload)) {
-      return Promise.resolve(payload)
-    }
-
-    return Promise.reject(new Error('Invalid token: expired'))
-  } catch (error) {
-    return Promise.reject(new Error('Cannot decode malformed token.'))
-  }
-}
-
-/**
  * readCookie
  * Reads and returns the contents of a cookie with the provided name for server.
  * @param cookies {String}
@@ -397,7 +366,7 @@ export default {
   setAccessToken,
   isAccessToken,
   removeAccessToken,
-  verifyJWT,
+  // verifyJWT,
   readCookie,
   orderByItems,
   qlParams,

@@ -1,7 +1,9 @@
-import colors from 'vuetify/es5/util/colors'
-
 import config from 'config'
+import DotEnvWebpack from 'dotenv-webpack'
+import ConfigWebpackPlugin from 'node-config-webpack'
 import pkg from './package'
+
+// const ConfigWebpackPlugin = require('config-webpack/dist/ConfigWebpackPlugin')
 
 const debug = require('debug')('app:nuxt.config')
 const isDebug = false
@@ -44,8 +46,11 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: ['~/plugins/init-plugins'],
+
+  router: {
+    middleware: ['init-app']
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -55,7 +60,9 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // https://go.nuxtjs.dev/svg
+    '@nuxtjs/svg'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -86,24 +93,41 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+    customVariables: ['~/assets/style/app.sass'],
+    defaultAssets: {
+      font: {
+        family: 'Roboto'
+      },
+      icons: 'mdi'
+    },
+    optionsPath: '~/plugins/vuetify/vuetify.options.js'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend (config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = '#source-map'
+      }
+      config.module.rules.push({
+        test: /\.xml$/,
+        loader: 'xml-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    },
+    plugins: [
+      new DotEnvWebpack({
+        path: './.env', // Path to .env file (this is the default)
+        systemvars: true // It makes it possible to work in production mode on Heroku hosting
+      }),
+      new ConfigWebpackPlugin()
+    ],
+    transpile: []
   }
 }

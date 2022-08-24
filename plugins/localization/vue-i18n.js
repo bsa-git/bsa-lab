@@ -5,13 +5,11 @@ const loMerge = require('lodash/merge')
 
 let en = require('~/plugins/localization/locales/en.json')
 let ru = require('~/plugins/localization/locales/ru.json')
-const enRtdata = require('~/plugins/localization/locales/en-rtdata.json')
-const ruRtdata = require('~/plugins/localization/locales/ru-rtdata.json')
 const enUnits = require('~/plugins/localization/locales/en-units.json')
 const ruUnits = require('~/plugins/localization/locales/ru-units.json')
 
-en = loMerge({}, en, enRtdata, enUnits)
-ru = loMerge({}, ru, ruRtdata, ruUnits)
+en = loMerge({}, en, enUnits)
+ru = loMerge({}, ru, ruUnits)
 
 Vue.use(VueI18n)
 

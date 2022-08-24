@@ -2,15 +2,15 @@
   "api": {
     "url": "API_PROD_URL"
   },
-  "personal_data": {
-    "app_title": "BSA",
-    "logo_title": "BSA Lab.",
-    "logo_icon": "check_circle",
-    "logo_img": "/img/doc/contacts/my-img-logo.jpg",
-    "my_img": "/img/doc/contacts/my-img.jpg",
+  "personalData": {
+    "appTitle": "BSA",
+    "logoTitle": "BSA Lab.",
+    "logoIcon": "check_circle",
+    "logoImg": "/img/doc/contacts/my-img-logo.jpg",
+    "myImg": "/img/doc/contacts/my-img.jpg",
     "copyright": "© 2017 Сергей Бескоровайный",
-    "designed_with": "BSA Lab.",
-    "designed_with_url": "http://bsa-git.github.io/",
+    "designedWith": "BSA Lab.",
+    "designedWithUrl": "http://bsa-git.github.io/",
     "contact": {
       "fullName": "Бескоровайный Сергей Анатольевич",
       "givenName": "Сергей",
