@@ -1,18 +1,13 @@
+import webpack from 'webpack'
 import config from 'config'
 import DotEnvWebpack from 'dotenv-webpack'
-import ConfigWebpackPlugin from 'node-config-webpack'
 import pkg from './package'
-
-// const ConfigWebpackPlugin = require('config-webpack/dist/ConfigWebpackPlugin')
 
 const debug = require('debug')('app:nuxt.config')
 const isDebug = false
 
 if (isDebug && process.env) { debug('process.env:', process.env) }
 if (isDebug && config) { debug('NODE_ENV: ' + config.util.getEnv('NODE_ENV')) }
-if (config.has('personal_data')) {
-  if (isDebug && config) { debug('personal_data: ' + config.get('personal_data.contact.fullName')) }
-}
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -126,7 +121,10 @@ export default {
         path: './.env', // Path to .env file (this is the default)
         systemvars: true // It makes it possible to work in production mode on Heroku hosting
       }),
-      new ConfigWebpackPlugin()
+      new webpack.DefinePlugin({
+        // double stringify because node-config expects this to be a string
+        'process.env.NODE_CONFIG': JSON.stringify(JSON.stringify(config))
+      })
     ],
     transpile: []
   }

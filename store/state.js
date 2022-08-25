@@ -1,11 +1,9 @@
 // import config from 'config'
-import config from 'config'
+// import config from 'config'
 import util from '~/plugins/lib/util'
 
 const debug = require('debug')('app:nuxt.config')
 const isDebug = false
-
-let personalData = {}
 
 /**
  * Get locales
@@ -16,15 +14,10 @@ const locales = (envLocales) => {
   return util.stripSpecific(envLocales, ';').split(';').map(item => item.trim())
 }
 
-// config.get('personalData')
-if (process.server) {
-  personalData = config.get('personalData')
-} else {
-  // personalData = CONFIG.personalData
-}
-
 export default () => {
-  if (true && process.env) { debug('process.env:', process.env) }
+  if (isDebug && process.client) { console.log('process.env.NODE_CONFIG:', JSON.parse(process.env.NODE_CONFIG)) }
+
+  const personalData = JSON.parse(process.env.NODE_CONFIG).personalData
 
   return {
     config: {
@@ -39,10 +32,9 @@ export default () => {
       nodeEnv: (process.env.NODE_ENV || 'development').trim(),
       debug: (process.env.DEBUG || '').trim(),
       baseUrl: (process.env.BASE_URL || 'http://localhost:3030').trim(),
-      homePath: (process.env.HOME_PATH || '/dashboard').trim(),
-
-      // --- PERSONAL-DATA ---//
+      homePath: (process.env.HOME_PATH || '/').trim(),
       isAvatar: util.isTrue(process.env.PERSONAL_IS_AVATAR)
+
       // logoIcon: personalData.logoIcon,
       // logoImage: personalData.logoImg,
       // logoTitle: personalData.logoTitle,
@@ -51,6 +43,9 @@ export default () => {
       // website: personalData.contact.website,
       // email: personalData.contact.emailPersonal
     },
+
+    // --- PERSONAL-DATA ---//
+    personalData,
 
     // --- SNACKBAR ---//
     snackbar: {

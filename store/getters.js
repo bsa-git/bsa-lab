@@ -9,6 +9,10 @@ const getters = {
     return state.config
   },
 
+  getPersonalData: (state) => {
+    return state.personalData
+  },
+
   getSnackBar: (state) => {
     return state.snackbar
   },
